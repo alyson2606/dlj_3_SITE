@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-bs-theme="dark">
+<html lang="pt-br" data-bs-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Firmino Dev cria sites modernos e acessíveis para destacar o comércio local de João Pessoa. Peça seu orçamento e venda mais!">
-  <title>Aquaponia </title>
+  <title>Aquaponia</title>
 
   <!-- SEO básico -->
   <link rel="canonical" href="https://www.SEUSITE.com.br" />
@@ -51,43 +51,110 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
 
   <style>
-    body {
-      transition: background-color 0.3s, color 0.3s;
+    :root {
+      /* Paleta inspirada em aquaponia */
+      --aqua-bg: #e6f5ff;      /* azul claro para fundo */
+      --aqua-green: #27ae60;   /* verde para bordas/realces */
+      --aqua-green-200: #8fd7ad; /* tom mais claro para hovers */
+      --card-bg: #ffffff;      /* cartões claros para contraste */
+      --text-main: #0b2636;    /* texto primário escuro-azulado */
     }
 
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--aqua-bg);
+      color: var(--text-main);
+      transition: background-color 0.3s, color 0.3s;
+      border-top: 6px solid var(--aqua-green);
+      border-bottom: 6px solid var(--aqua-green);
+    }
+
+    /* Navbar com borda verde para reforçar o tema */
+    .navbar {
+      background-color: #1f7fb8; /* azul mais forte para contraste */
+      border-bottom: 4px solid var(--aqua-green);
+    }
+    .navbar .nav-link, .navbar .navbar-brand {
+      color: #fff !important;
+    }
+
+    /* Cards equivalentes (mesma altura) */
     .card {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s, transform 0.3s;
+      background-color: var(--card-bg);
+      border: 2px solid var(--aqua-green);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+      height: 100%;
+    }
+
+    .card .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      gap: 0.5rem;
     }
 
     .card:hover {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      transform: scale(1.02);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+      transform: translateY(-2px);
+      border-color: var(--aqua-green-200);
     }
 
-    .nav-item {
-      color: white;
+    .feature-icon {
+      font-size: 2.25rem;
+      line-height: 1;
     }
+
+    /* Ícone de dólar preto */
+    .dollar {
+      color: #000 !important;
+    }
+
+    /* Imagens dos ícones customizados */
+    #leaf { width: 60px; height: auto; }
 
     * {
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
+
+
+    /* Seções com sutis bordas verdes para remeter ao tema */
+    section.thematic {
+      border-left: 4px solid var(--aqua-green);
+      border-right: 4px solid var(--aqua-green);
+      border-radius: .5rem;
+      padding: 1rem;
+      background: rgba(255,255,255,.35);
+    }
+
+    .morango{
+      height: 200px;
+    }
+
+    .sustentavel_icon{
+      width: 45px;
+    }
   </style>
 </head>
-<body class="bg-dark text-light">
+<body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <span class="navbar-brand"></span>
+      <span class="navbar-brand fw-semibold">Aquaponia 💧</span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link text-light" href="#servicos">Serviços</a></li>
-          <li class="nav-item"><a class="nav-link text-light" href="#portfolio">Portfólio</a></li>
-          <li class="nav-item"><a class="nav-link text-light" href="#contato">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos">Vantagens</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
         </ul>
       </div>
     </div>
@@ -95,119 +162,117 @@
 
   <!-- Conteúdo principal -->
   <main class="container py-5">
-    <section class="text-center mb-5" data-aos="fade-up">
+    <section class="text-center mb-5 thematic" data-aos="fade-up">
       <h1 class="mb-3">Aquaponia 💧</h1>
-      <h2>uma solução para o futuro!</h2>
-      <p class="mb-4">Principais explicações</p>
+      <h2>Uma solução para o futuro!</h2>
+      <p class="mb-0">Principais explicações</p>
     </section>
 
-    <section id="sobre" class="mb-5 text-center" data-aos="fade-up">
-      <h2 class="mb-4">Sobre Aquaponia</h2>
-      <h3>Conheça as grandes vantagens que este sistema pode fazer no seu negóvio</h3>
+    <section id="sobre" class="mb-5 text-center " data-aos="fade-up">
+      <h2 class="mb-3">Sobre Aquaponia</h2>
+      <h3>Conheça as grandes vantagens que este sistema pode fazer no seu negócio</h3>
     </section>
 
     <section id="servicos" class="mb-5">
-
-      <div class="row g-4 text-center">
-        <div class="col-md-6 col-lg-3" data-aos="fade-up">
-          <div class="card bg-secondary text-light">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
+        <div class="col" data-aos="fade-up">
+          <div class="card h-100">
             <div class="card-body">
-              <i class="bi bi-globe fs-2"></i>
-              <h5 class="mt-3">Economia de 90% no uso de água</h5>
-              <p>ótima escolha para aqueles que querem economia.</p>
+              <i class="bi bi-globe feature-icon"></i>
+              <h5 class="mt-2">Economia de até 90% de água</h5>
+              <p class="mb-0">Ótima escolha para quem quer reduzir custos hídricos.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3" data-aos="fade-up">
-          <div class="card bg-secondary text-light">
+        <div class="col" data-aos="fade-up">
+          <div class="card h-100">
             <div class="card-body">
-              <i class="bi bi-bullseye fs-2"></i>
-              <h5 class="mt-3">Comida Saudável</h5>
-              <p>A comida do sistema aquaponico é livre de qualquer tipo de agrotóxico para melhor alimentação
-              </p>
+              <img src="./img/plano-de-saude.png" alt="" class="sustentavel_icon">
+              <h5 class="mt-2">Comida saudável</h5>
+              <p class="mb-0">Produção livre de agrotóxicos para uma alimentação melhor.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3" data-aos="fade-up">
-          <div class="card bg-secondary text-light">
+        <div class="col" data-aos="fade-up">
+          <div class="card h-100">
             <div class="card-body">
-              <i class="bi bi-image fs-2"></i>
-              <h5 class="mt-3">Autosutentável</h5>
-              <p>O sistema de aquaponia é composto de dois sistemas o de peixes e de plantas, fazendo uma combinação para que eles se ajudem no desenvolvimento das plantas!</p>
+              <img src="./img/sustentabilidade.png" alt=""  class="sustentavel_icon">
+              <h5 class="mt-2">Autossustentável</h5>
+              <p class="mb-0">Integra peixes e plantas em um ciclo que favorece ambos.</p>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3" data-aos="fade-up">
-          <div class="card bg-secondary text-light">
+        <div class="col" data-aos="fade-up">
+          <div class="card h-100">
             <div class="card-body">
-                <img src="" alt="">
-              <i class="bi bi-phone fs-2"></i>
-              <h5 class="mt-3">Tecnologia e saúde</h5>
-              <p>Enquanto o mundo fala de escassez, a aquaponia oferece um sistema eficiente, sustentável e produtivo.  </p>
+              <i class="bi bi-phone feature-icon"></i>
+              <h5 class="mt-2">Tecnologia e eficiência</h5>
+              <p class="mb-0">Enquanto se fala em escassez, a aquaponia entrega produtividade.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="portfolio" class="mb-5">
+    <section id="portfolio" class="mb-5 ">
       <h2 class="text-center mb-4" data-aos="fade-up">Portfólio</h2>
       <div class="row g-4 text-center">
         <div class="col-md-4" data-aos="fade-up">
-          <div class="card bg-secondary text-light p-4">
-            <h5>Projeto 1</h5>
-            <p>Descrição breve do projeto 1.</p>
-            <a href="#" class="btn btn-outline-light">Ver site</a>
+          <div class="card p-4 h-100">
+            <h5>Exemplo 1 </h5>
+            <p>Sistema Aquaponico em larga Escala</p>
+            <img src="./img/aquaponia.png" alt="">
           </div>
         </div>
         <div class="col-md-4" data-aos="fade-up">
-          <div class="card bg-secondary text-light p-4">
-            <h5>Projeto 2</h5>
-            <p>Descrição breve do projeto 2.</p>
-            <a href="#" class="btn btn-outline-light">Ver site</a>
+          <div class="card p-4 h-100">
+            <h5>Exemplo 2</h5>
+            <p>Morangos Gerados pelo sistema de Aquaponia</p>
+           <img src="./img/morango_aquaponia.jpg" class="morango" alt="">
           </div>
         </div>
         <div class="col-md-4" data-aos="fade-up">
-          <div class="card bg-secondary text-light p-4">
-            <h5>Projeto 3</h5>
-            <p>Descrição breve do projeto 3.</p>
-            <a href="#" class="btn btn-outline-light">Ver site</a>
+          <div class="card p-4 h-100">
+            <h5>Exemplo 3</h5>
+            <p>Contato de Agricultores com Aquaponia Maceio-AL</p>
+              <img src="./img/agricultores_aquaponia.jpeg" alt="">
           </div>
         </div>
       </div>
     </section>
 
-    <section id="porque" class="text-center py-5" data-aos="fade-up">
-      <h2 class="mb-4">Por que escolher a Aquaponia ?</h2>
+    <section id="porque" class="text-center py-5 " data-aos="fade-up">
+      <h2 class="mb-4">Por que escolher a Aquaponia?</h2>
       <div class="row g-4">
         <div class="col-md-4" data-aos="fade-up">
-          <i class="bi bi-currency-dollar display-5 mb-3"></i>
-          <h5>Dupla fonte de renda </h5>
-          <p>Apesar da Aquaponia ter um preço inicial elevado, ela se pagará no decorrer dos anos. Gerando doi tipos de renda fixa.</p>
+          <i class="bi bi-currency-dollar dollar display-5 mb-3"></i>
+          <h5>Dupla fonte de renda</h5>
+          <p>Apesar do investimento inicial, o sistema tende a se pagar ao longo dos anos, gerando duas frentes de receita.</p>
         </div>
         <div class="col-md-4" data-aos="fade-up">
-          <i class="bi bi-lightning-charge display-5 mb-3"></i>
-          <h5>Não depende de solo</h5>
-          <p>Por incrível que pareça a aquaponia não depende de um solo fixo para seu funcionamento! em alguns casos se utiliza substrato. Além disso, não é preciso de um grande espaço.</p>
+          <img id="leaf" src="./img/leaves.png" alt="Ícone folha" class="mb-3">
+          <h5>Independe de solo</h5>
+          <p>Funciona com substratos e ocupa pouco espaço, ampliando as possibilidades de implantação.</p>
         </div>
         <div class="col-md-4" data-aos="fade-up">
-          <i class="bi bi-heart display-5 mb-3"></i>
-          <h5>Variedade de Plantações</h5>
-          <p>Por seu diferencial de ocupar pouco espaço, é possível plantar difentes tipos de vegetais em seu sistema. Atribuindo uma variedade na colheita.</p>
+          <img src="./img/plant_icon-icons.com_64543.png" alt="Ícone planta" class="mb-3" style="width:60px;height:auto;">
+          <h5>Variedade de plantações</h5>
+          <p>Aproveite o uso eficiente do espaço para cultivar diversos vegetais no mesmo sistema.</p>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="text-center mb-5" data-aos="fade-up">
-      <h2 class="mb-4">Entre em contato</h2>
-      <p>Nos chame no WhatsApp e comece seu projeto hoje mesmo!</p>
-      <a href="https://wa.me/seunumerodetelefone" class="btn btn-primary btn-lg">Fale Conosco</a>
+    <section id="contato" class="text-center mb-5 " data-aos="fade-up">
+      <h2 class="mb-4">Espaço de interação</h2>
+      <section class="border p-4 bg-white rounded-3">
+        <!-- Conteúdo interativo futuro -->
+      </section>
     </section>
   </main>
 
   <!-- Rodapé -->
-  <footer class="bg-dark text-light text-center py-4">
-    <p>IFPB Campus João Pessoa - PB</p>
+  <footer class="text-center py-4" style="background:#1f7fb8; color:#fff; border-top:4px solid var(--aqua-green);">
+    <p class="mb-0">IFPB Campus João Pessoa - PB</p>
   </footer>
 
   <!-- Inicialização AOS -->
