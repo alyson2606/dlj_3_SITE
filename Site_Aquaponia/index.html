@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Firmino Dev cria sites modernos e acessíveis para destacar o comércio local de João Pessoa. Peça seu orçamento e venda mais!">
+
   <title>Aquaponia</title>
 
   <!-- SEO básico -->
@@ -12,17 +12,20 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Firmino Dev - Sites para o comércio local de João Pessoa">
-  <meta property="og:description" content="Criamos sites rápidos, modernos e que vendem para pequenos negócios em João Pessoa.">
+  <meta property="og:title" content="Educultiva - Sites para concientização da aquaponia
+  ">
+  <meta property="og:description" content="Um site criado com a finalidade de conscientização sobre a prática de aquaponia e sua influência no cotidiano">
   <meta property="og:image" content="">
-  <meta property="og:url" content="https://www.SEUSITE.com.br">
+  <meta property="og:url" content="https://www.Educultiva.com.br">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Firmino Dev - Sites para negócios locais">
   <meta name="twitter:description" content="Sites acessíveis e personalizados para destacar seu comércio em João Pessoa.">
   <meta name="twitter:image" content="">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <!-- Schema.org -->
   <script type="application/ld+json">
     {
@@ -139,22 +142,29 @@
     .sustentavel_icon{
       width: 45px;
     }
+    #title{
+       font-family:Georgia, 'Times New Roman', Times, serif;
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <span class="navbar-brand fw-semibold">Aquaponia 💧</span>
+      <span class="navbar-brand fw-semibold" id="title">Educultiva 🌱</span>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+          <a href="sobre_nos.html" class="btn btn-success mr-3">
+          Sobre Nós
+          </a>
           <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
           <li class="nav-item"><a class="nav-link" href="#servicos">Vantagens</a></li>
           <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
           <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          
         </ul>
       </div>
     </div>
@@ -170,7 +180,12 @@
 
     <section id="sobre" class="mb-5 text-center " data-aos="fade-up">
       <h2 class="mb-3">Sobre Aquaponia</h2>
-      <h3>Conheça as grandes vantagens que este sistema pode fazer no seu negócio</h3>
+     <div class="p-4 rounded-3 shadow-sm d-flex align-items-start gap-3">
+       <h1 class="text-black" id="title">O que é Aquaponia?</h1>
+       <p id="title" class="lead text-dark mb-0 ">A aquaponia é uma técnica que permite, de forma integrada e colaborativa, a aquicultura convencional (criação de organismos aquáticos tais como peixes e camarões) associada à hidroponia (cultivo de plantas em água), ocorrendo uma troca entre ambas as partes. Garatindo um sistema único e Autossustentável</p>
+     </div> 
+    
+      <h3 class="mt-5">Conheça as grandes vantagens que este sistema pode fazer no seu negócio</h3>
     </section>
 
     <section id="servicos" class="mb-5">
@@ -215,12 +230,12 @@
     </section>
 
     <section id="portfolio" class="mb-5 ">
-      <h2 class="text-center mb-4" data-aos="fade-up">Portfólio</h2>
+      <h2 class="text-center mb-4" data-aos="fade-up">Projetos</h2>
       <div class="row g-4 text-center">
         <div class="col-md-4" data-aos="fade-up">
           <div class="card p-4 h-100">
             <h5>Exemplo 1 </h5>
-            <p>Sistema Aquaponico em larga Escala</p>
+            <p>Sistema Aquaponico em larga escala</p>
             <img src="./img/aquaponia.png" alt="">
           </div>
         </div>
