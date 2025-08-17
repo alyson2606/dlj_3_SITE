@@ -43,8 +43,143 @@
         padding: 1rem;
         background: rgba(255,255,255,.35);
     }
+
+    .imagem_apresentação{
+      width: 15rem;
+      height: auto;
+      height: auto;
+      border: 1px solid #000;   /* borda preta */
+      border-radius: .5rem;    
+    }
+    .imagens{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5rem;
+       
+    }
+
+ .navbar .instagram-link {
+  background: #ff4482;     /* cor oficial Instagram */
+  color: #fff !important;
+  padding: .4rem .9rem;
+  border-radius: 30px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.navbar .instagram-link:hover {
+  background: #c72a5f;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+
+
+  
+    /* ---------- Responsividade & refinamentos sem mudar a estrutura ---------- */
+
+/* Base mais estável */
+*, *::before, *::after { box-sizing: border-box; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Título e textos fluidos sem quebrar layout */
+h1 { font-size: clamp(1.6rem, 1.8vw + 1rem, 2.25rem); }
+h2 { font-size: clamp(1.25rem, 1.2vw + 1rem, 1.75rem); }
+h3 { font-size: clamp(1rem, 0.9vw + 0.9rem, 1.25rem); }
+
+/* Navbar: ícone do hamburguer visível sobre fundo azul */
+.navbar-toggler {
+  border-color: rgba(255,255,255,.6);
+}
+.navbar-toggler:focus { box-shadow: 0 0 0 .15rem rgba(255,255,255,.35); }
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Cartões/áreas com respiro em telas pequenas */
+section.thematic,
+div.background {
+  backdrop-filter: saturate(120%) blur(0px);
+  border: 1px solid rgb(77, 153, 47);
+}
+
+/* Imagens dos fundadores: tamanho fluido */
+.imagem_apresentação {
+  width: 100%;
+  max-width: 240px;            /* limite em telas médias/grandes */
+  border: 1px solid #000;
+  border-radius: .5rem;
+}
+
+/* Linha das imagens + textos: quebra controlada */
+.imagens {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;                   /* gap mais amigável por padrão */
+  flex-wrap: wrap;             /* permite quebra em telas estreitas */
+}
+
+/* Espaçamento vertical entre “cards” de fundador */
+.background { 
+  margin-bottom: 1rem;
+}
+
+/* ---------- Breakpoints ---------- */
+
+/* <= 992px (tablets grandes e menores) */
+@media (max-width: 992px) {
+  .imagens { 
+    gap: 1.25rem;
+  }
+  main.container { 
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* <= 768px (tablets/telefones) */
+@media (max-width: 768px) {
+  .imagens {
+    flex-direction: column;    /* empilha imagem e lista */
+    align-items: flex-start;   /* alinha à esquerda para leitura melhor */
+  }
+  .imagem_apresentação { 
+    max-width: 200px; 
+  }
+  section.thematic { 
+    padding: .85rem; 
+  }
+  .navbar .nav-link { 
+    padding: .5rem .25rem;
+  }
+}
+
+/* <= 576px (telefones pequenos) */
+@media (max-width: 576px) {
+  .imagem_apresentação { 
+    max-width: 180px; 
+  }
+  body {
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+  }
+  footer p { 
+    margin-bottom: .25rem; 
+    font-size: .95rem;
+  }
+
+}
+
   </style>
+  
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
@@ -55,6 +190,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+          <li>
+          <a href="https://www.instagram.com/equipe_ajudaja/?hl=en" 
+            class="instagram-link" target="_blank">
+            <i class="bi bi-instagram"></i> Instagram
+          </a>
+          </li>
+
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre Nós</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#contato">Contato</a></li>
@@ -72,32 +214,76 @@
 
     <section class="mb-5 " data-aos="fade-up">
       <h2 class="mb-3 text-success">Nossa Missão</h2>
-      <p>Promover o uso da aquaponia como alternativa sustentável para produção de alimentos, incentivando práticas que economizam recursos e protegem o meio ambiente.</p>
+      <h3>Promover o uso da aquaponia como alternativa sustentável para produção de alimentos, incentivando práticas que economizam recursos e protegem o meio ambiente.</h3>
     </section>
 
     <section class="row-gap " data-aos="fade-up">
         <h2>Fundadores</h2>
         <div class="background">
-            <img src="#" alt="Cristina Kelly">
+            <img src="" alt="Cristina Kelly">
             <p>orientadora</p>
         </div>
         <div class="background">
-            <img src="#" alt="Alyson Firmino">
-            <p>Desenvolvedor do Site</p>
+              <div class="imagens">
+
+                <img src="./img/Alyson_img.jpg" class="imagem_apresentação" alt="Alyson Firmino" class="border border-black"> 
+                <ul>
+                  <b>
+                    <li>Desenovolvedor do site</li>
+                    <li>Responsável pelos roteiros</li>
+                  </b>
+                </ul>
+          </div>
         </div>
         <div class="background">
-            <img src="#" alt="Samara de Lira Brandão">
-            <p>Responsável pela parte de Ideias </p>
+              <div class="imagens">
+
+                <img src="./img/Samara_img.jpg" class="imagem_apresentação" alt="Samara de Lira Brandão" > 
+                <ul>
+                  <b>
+                    <li>Responsável pela parte de Ideias</li>
+                    <li>Lider do Grupo</li>
+                    
+                  </b>
+                </ul>
+              
+          </div>
         </div>
+        <div class="background">
+          <div class="imagens">
+
+            <img src="./img/Laryssa_img.jpg" class="imagem_apresentação" alt="Laryssa">
+           <ul>
+            <b>
+              <li>Vídeo Maker</li>
+              <li>Editora dos Vídeos</li>
+            </b>
+           </ul>
+          </div>
+        </div>
+        <div class="background">
+          <div class="imagens">
+
+            <img src="./img/MariaLuisa_img.jpg" class="imagem_apresentação" alt="Laryssa">
+           <ul>
+            <b>
+              <li>Designer</li>
+              <li>Mente Criativa</li>
+            </b>
+           </ul>
+          </div>
+        </div>
+        
         
 
     </section>
   </main>
-
+  
   <!-- Rodapé -->
   <footer class="text-center py-4" style="background:#1f7fb8; color:#fff; border-top:4px solid var(--aqua-green);">
     <p class="mb-0">© 2025 Educultiva - Todos os direitos reservados</p>
     <p>IFPB-Campus João Pessoa</p>
+    
   </footer>
 
   <!-- Scripts -->
