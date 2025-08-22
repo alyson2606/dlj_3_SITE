@@ -118,6 +118,7 @@
       color: #000 !important;
     }
 
+    
     /* Imagens dos ícones customizados */
     #leaf { width: 60px; height: auto; }
 
@@ -145,6 +146,66 @@
     #title{
        font-family:Georgia, 'Times New Roman', Times, serif;
     }
+    #folha_icon{
+      width: 60px;
+      justify-content: center;
+      align-items: center;
+    }
+ 
+    /* Imagens sempre fluidas */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Ícone do hamburguer visível sobre fundo azul */
+.navbar-toggler { border-color: rgba(255,255,255,.6); }
+.navbar-toggler:focus { box-shadow: 0 0 0 .15rem rgba(255,255,255,.35); }
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Cards: protegem imagens e evitam “vazar” */
+.card { overflow: hidden; }
+
+/* Seção "O que é Aquaponia?": empilhar no mobile */
+.thematic .d-flex { flex-wrap: wrap; }
+@media (max-width: 768px) {
+  .thematic .d-flex {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .75rem;
+  }
+  .thematic .d-flex h1,
+  .thematic .d-flex p { margin: 0; }
+}
+
+/* Grade dos “serviços”: respiro melhor no mobile */
+@media (max-width: 576px) {
+  #servicos .card-body { padding: 1rem .75rem; }
+}
+
+/* Imagem dos morangos: impedir distorção */
+.morango { height: auto !important; max-width: 100%; }
+
+/* Títulos e textos fluem sem esmagar */
+h1 { font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.4rem); }
+h2 { font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.8rem); }
+h3, .lead { font-size: clamp(1rem, .95rem + 0.5vw, 1.25rem); }
+
+/* Navbar: botão “Sobre Nós” harmoniza na barra */
+.navbar .btn {
+  padding: .4rem .9rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+  /* Ícones de imagem padronizados nessa seção */
+#porque .why-icon { width: 60px; height: auto; display: block; }
+
+/* Alturas consistentes e layout que não “entorta” */
+#porque .rounded-3 { border: 2px solid var(--aqua-green); }
+@media (max-width: 576px) {
+  #porque .p-4 { padding: 1rem; }
+}
+
+
   </style>
 </head>
 <body>
@@ -157,7 +218,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <a href="sobre_nos.html" class="btn btn-success mr-3">
+          <a href="sobre_nos.html" class="btn btn-success me-3">
           Sobre Nós
           </a>
           <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
@@ -175,7 +236,6 @@
     <section class="text-center mb-5 thematic" data-aos="fade-up">
       <h1 class="mb-3">Aquaponia 💧</h1>
       <h2>Uma solução para o futuro!</h2>
-      <p class="mb-0">Principais explicações</p>
     </section>
 
     <section id="sobre" class="mb-5 text-center " data-aos="fade-up">
@@ -185,7 +245,7 @@
        <p id="title" class="lead text-dark mb-0 ">A aquaponia é uma técnica que permite, de forma integrada e colaborativa, a aquicultura convencional (criação de organismos aquáticos tais como peixes e camarões) associada à hidroponia (cultivo de plantas em água), ocorrendo uma troca entre ambas as partes. Garatindo um sistema único e Autossustentável</p>
      </div> 
     
-      <h3 class="mt-5">Conheça as grandes vantagens que este sistema pode fazer no seu negócio</h3>
+      <h3 class="mt-4">Conheça as grandes vantagens que este sistema pode fazer no seu negócio</h3>
     </section>
 
     <section id="servicos" class="mb-5">
@@ -256,31 +316,43 @@
       </div>
     </section>
 
-    <section id="porque" class="text-center py-5 " data-aos="fade-up">
-      <h2 class="mb-4">Por que escolher a Aquaponia?</h2>
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up">
-          <i class="bi bi-currency-dollar dollar display-5 mb-3"></i>
-          <h5>Dupla fonte de renda</h5>
-          <p>Apesar do investimento inicial, o sistema tende a se pagar ao longo dos anos, gerando duas frentes de receita.</p>
-        </div>
-        <div class="col-md-4" data-aos="fade-up">
-          <img id="leaf" src="./img/leaves.png" alt="Ícone folha" class="mb-3">
-          <h5>Independe de solo</h5>
-          <p>Funciona com substratos e ocupa pouco espaço, ampliando as possibilidades de implantação.</p>
-        </div>
-        <div class="col-md-4" data-aos="fade-up">
-          <img src="./img/plant_icon-icons.com_64543.png" alt="Ícone planta" class="mb-3" style="width:60px;height:auto;">
-          <h5>Variedade de plantações</h5>
-          <p>Aproveite o uso eficiente do espaço para cultivar diversos vegetais no mesmo sistema.</p>
-        </div>
+    <section id="porque" class="text-center py-5" data-aos="fade-up">
+  <h2 class="mb-4">Por que escolher a Aquaponia?</h2>
+  <div class="row g-4">
+    <!-- Card 1 -->
+    <div class="col-12 col-md-4" data-aos="fade-up">
+      <div class="p-4 h-100 bg-white rounded-3 shadow-sm d-flex flex-column align-items-center">
+        <i class="bi bi-currency-dollar dollar display-5 mb-3"></i>
+        <h5>Dupla fonte de renda</h5>
+        <p class="mb-0">Apesar do investimento inicial, o sistema tende a se pagar ao longo dos anos, gerando duas frentes de receita.</p>
       </div>
-    </section>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-12 col-md-4" data-aos="fade-up">
+      <div class="p-4 h-100 bg-white rounded-3 shadow-sm d-flex flex-column align-items-center">
+        <img id="leaf" src="./img/leaves.png" alt="Ícone folha" class="mb-3 why-icon">
+        <h5>Independe de solo</h5>
+        <p class="mb-0">Funciona com substratos e ocupa pouco espaço, ampliando as possibilidades de implantação.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 (corrigido) -->
+    <div class="col-12 col-md-4" data-aos="fade-up">
+      <div class="p-4 h-100 bg-white rounded-3 shadow-sm d-flex flex-column align-items-center">
+        <img src="./img/plant_icon-icons.com_64543.png" alt="Ícone planta" class="mb-3 why-icon">
+        <h5>Variedade de plantações</h5>
+        <p class="mb-0">Aproveite o uso eficiente do espaço para cultivar diversos vegetais no mesmo sistema.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="contato" class="text-center mb-5 " data-aos="fade-up">
       <h2 class="mb-4">Espaço de interação</h2>
+      <h2 class="mb-4">Adcione fotos de seus sitema</h2>
       <section class="border p-4 bg-white rounded-3">
-        <!-- Conteúdo interativo futuro -->
+        <a href="./Adcionar_arquivos.html"><button>Adcionar!</button></a>
       </section>
     </section>
   </main>
